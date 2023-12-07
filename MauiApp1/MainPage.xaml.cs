@@ -1,31 +1,14 @@
-﻿using System.ComponentModel;
+﻿using MauiApp1.ViewModel;
+using System.ComponentModel;
 
 namespace MauiApp1
 {
-    public partial class MainPage : ContentPage, INotifyPropertyChanged
-    {
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        int count = 0;
-       
+    public partial class MainPage : ContentPage
+    {       
 
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 }

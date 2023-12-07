@@ -9,13 +9,27 @@ using System.Threading.Tasks;
 
 namespace MauiApp1.ViewModel
 {
-    abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged<T>(Expression<Func<T>> f)
+        public void OnPropertyChanged<T>(Expression<Func<T>> expressao)
         {
-            string name = ((MemberExpression)f.Body).Member.Name;
+            string name = ((MemberExpression)expressao.Body).Member.Name;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private Page _pageContainer;
+        public Page PageContainer
+        {
+            get
+            {
+                return _pageContainer;
+            }
+            set
+            {
+                _pageContainer = value;
+                OnPropertyChanged(() => PageContainer);
+            }
         }
     }
 }
