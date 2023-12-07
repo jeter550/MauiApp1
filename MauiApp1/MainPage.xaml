@@ -30,7 +30,7 @@
                 <Label
                 Text="Preço Inicial"
                 
-                FontSize="32"
+                FontSize="16"
                 HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=PrecoInicial, Mode=TwoWay}" />
@@ -38,7 +38,7 @@
                 <Label
                 Text="Volatilidade Média(%)"
                 
-                FontSize="32"
+                FontSize="16"
                 HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=Valotilidade, Mode=TwoWay}" />
@@ -46,7 +46,7 @@
                 <Label
                 Text="Retorno Médio(%)"
                 
-                FontSize="32"
+                FontSize="16"
                 HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=Retorno, Mode=TwoWay}" />
@@ -54,7 +54,7 @@
                 <Label
                 Text="Tempo"
                 
-                FontSize="32"
+                FontSize="16"
                 HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=TempoDias, Mode=TwoWay}" />
