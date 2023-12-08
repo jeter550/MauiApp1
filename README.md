@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="Imagem.png" alt="Exemplo imagem">
 
 # Desafio Entrevista .NET MAUI
 > Aplicação Windows Desktop Uitlizando tecnologia MAUI com a versão 7 do .NET fazendo uso do padrão MVVM e Clean Code.
