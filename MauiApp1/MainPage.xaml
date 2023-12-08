@@ -8,7 +8,7 @@
              xmlns:xss="clr-namespace:MauiApp1"
              x:Class="MauiApp1.MainPage" x:Name="mainPage">
     <ContentPage.BindingContext>
-        <view:MainPageViewModel PrecoInicial="100" Valotilidade="20" Retorno="1" TempoDias="50"  PageContainer="{x:Reference mainPage}" x:Name="viewModel" />
+        <view:MainPageViewModel PrecoInicial="100" Valotilidade="20" Retorno="1" TempoDias="60"  PageContainer="{x:Reference mainPage}" x:Name="viewModel" />
     </ContentPage.BindingContext>
     
     <ScrollView>
@@ -52,8 +52,7 @@
                 <Entry Text="{Binding Path=Retorno, Mode=TwoWay}" />
 
                 <Label
-                Text="Tempo"
-                
+                Text="Tempo(dias)"                
                 FontSize="16"
                 HorizontalOptions="Start" />
 

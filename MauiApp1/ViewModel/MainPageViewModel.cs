@@ -108,8 +108,8 @@ namespace MauiApp1.ViewModel
             try
             {
                 double[] valoresSomulacao = Util.Statics.GenerateBrownianMotion(
-                    sigma: this.Retorno,
-                    mean: this.Valotilidade,
+                    sigma: this.Valotilidade,
+                    mean: this.Retorno,
                     initialPrice: this.PrecoInicial,
                     numDays: this.TempoDias
                 );

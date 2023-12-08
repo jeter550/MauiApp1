@@ -3,6 +3,7 @@ using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,14 +57,40 @@ namespace MauiApp1.CustomComponents
 
         private void GraphicBuild(ICanvas canvas, RectF dirtyRect)
         {
-            PathF path = new PathF();
-            path.MoveTo(40, 10);
-            path.LineTo(70, 80);
-            path.LineTo(10, 50);
-            path.Close();
-            canvas.StrokeColor = Colors.Green;
-            canvas.StrokeSize = 6;
-            canvas.DrawPath(path);
+            double maxvalue = this.ItemsSource.Where(s => !double.IsInfinity(s.Valor)).Max(s => s.Valor);
+
+            float x = 40, y = 10;
+
+            
+
+            double with = this.Width;
+            double height = this.Height;
+
+            PointF point1 = new PointF(0, Convert.ToInt64(height));
+            PointF point2 = new PointF(0, Convert.ToInt64(height));
+
+            float distance = Convert.ToInt64(Width / ItemsSource.Count);
+
+            Random rd = new Random();
+
+            this.ItemsSource.ForEach(s => 
+            {
+                if (double.IsInfinity(s.Valor)) return;
+
+                double perc = s.Valor / maxvalue;
+
+                float part = Convert.ToInt64(height - (height * perc) );
+
+                point1.X = point2.X;
+                point1.Y = point2.Y;
+                point2.X += distance;
+                point2.Y = part; 
+
+                canvas.StrokeColor = Colors.Red;
+                canvas.StrokeSize = 1;
+                canvas.DrawLine(point1, point2);
+
+            });
         }
     }
 }
