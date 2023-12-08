@@ -15,7 +15,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="350"></ColumnDefinition>
+                <ColumnDefinition Width="280"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" 
                     Stroke="Gray"
@@ -28,57 +28,52 @@
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="15"  />
                 </Border.StrokeShape>
-
-
-
             </Border>
-            <customComponents:GraphicsComponent Margin="35" Grid.Column="0" BindingContext="{Binding}" x:Name="grafico"  ItemsSource="{Binding Mode=TwoWay, Source={Reference viewModel}, Path=FonteDeDados}"
- HorizontalOptions="Fill"
-VerticalOptions="Fill" />
-
+            <customComponents:GraphicsComponent 
+                Margin="35"                
+                Grid.Column="0" BindingContext="{Binding}" x:Name="grafico"  ItemsSource="{Binding Mode=TwoWay, Source={Reference viewModel}, Path=FonteDeDados}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill" />
 
             <VerticalStackLayout Grid.Column="1"
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+                Spacing="5"
+                Padding="30,0"
+                VerticalOptions="Center">
 
                 <Label
-                Text="Preço Inicial"
-                
-                FontSize="16"
-                HorizontalOptions="Start" />
-
-                <Entry Text="{Binding Path=PrecoInicial, Mode=TwoWay}" />
+                    Text="Preço Inicial"                
+                    FontSize="16"
+                    HorizontalOptions="Start" />
+                <Entry Text="{Binding Path=PrecoInicial, Mode=TwoWay}"/>
 
                 <Label
-                Text="Volatilidade Média(%)"
-                
-                FontSize="16"
-                HorizontalOptions="Start" />
+                    Text="Volatilidade Média(%)"                
+                    FontSize="16"
+                    HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=Valotilidade, Mode=TwoWay}" />
 
                 <Label
-                Text="Retorno Médio(%)"
-                
-                FontSize="16"
-                HorizontalOptions="Start" />
+                    Text="Retorno Médio(%)"                
+                    FontSize="16"
+                    HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=Retorno, Mode=TwoWay}" />
 
-                <Label
-                Text="Tempo(dias)"                
-                FontSize="16"
-                HorizontalOptions="Start" />
+                <Label  
+                    Text="Tempo(dias)"                
+                    FontSize="16"
+                    HorizontalOptions="Start" />
 
                 <Entry Text="{Binding Path=TempoDias, Mode=TwoWay}" />
 
-                <Button
-                x:Name="GerarSimulacaoButton"
-                Text="Gerar Simulação"
-                SemanticProperties.Hint="Clique aqui para gerar uma nova solução de preços"                
-                HorizontalOptions="Center"
-                Command="{Binding GerarSimuacaoCommand}"/>
+                <Button x:Name="GerarSimulacaoButton"
+                        Text="Gerar Simulação"
+                        TextColor="BlueViolet"
+                        SemanticProperties.Hint="Gerar Simulação"                
+                        HorizontalOptions="Center"
+                        Padding="15"
+                        Command="{Binding GerarSimuacaoCommand}"/>
 
             </VerticalStackLayout>
         </Grid>
