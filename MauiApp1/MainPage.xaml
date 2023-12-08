@@ -6,21 +6,36 @@
              xmlns:customComponents="clr-namespace:MauiApp1.CustomComponents"
              xmlns:drawable="clr-namespace:MauiApp1"
              xmlns:xss="clr-namespace:MauiApp1"
-             x:Class="MauiApp1.MainPage" x:Name="mainPage">
+             x:Class="MauiApp1.MainPage" x:Name="mainPage"
+             BackgroundColor="Black">
     <ContentPage.BindingContext>
         <view:MainPageViewModel PrecoInicial="100" Valotilidade="20" Retorno="1" TempoDias="60"  PageContainer="{x:Reference mainPage}" x:Name="viewModel" />
-    </ContentPage.BindingContext>
-    
-    <ScrollView>
+    </ContentPage.BindingContext>    
+        <ScrollView>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="350"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" 
+                    Stroke="Gray"
+                    StrokeThickness="1"
+                    Background="#ffffff"
+                    Opacity="0.15"
+                    Padding="16,8"
+                    Margin="25"
+                    HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"  />
+                </Border.StrokeShape>
 
-            <customComponents:GraphicsComponent BindingContext="{Binding}" x:Name="grafico" Grid.Column="0" ItemsSource="{Binding Mode=TwoWay, Source={Reference viewModel}, Path=FonteDeDados}"
-         HeightRequest="300"
-         WidthRequest="400" />
+
+
+            </Border>
+            <customComponents:GraphicsComponent Margin="35" Grid.Column="0" BindingContext="{Binding}" x:Name="grafico"  ItemsSource="{Binding Mode=TwoWay, Source={Reference viewModel}, Path=FonteDeDados}"
+ HorizontalOptions="Fill"
+VerticalOptions="Fill" />
+
 
             <VerticalStackLayout Grid.Column="1"
             Spacing="25"
@@ -69,5 +84,4 @@
         </Grid>
 
     </ScrollView>
-
 </ContentPage>

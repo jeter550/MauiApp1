@@ -34,8 +34,6 @@ namespace MauiApp1.CustomComponents
             { 
                 SetValue(ItemsSourceProperty, value);
             }
-                
-            
         }
 
         public static void OnItemsSourceChanged(BindableObject bindable, object oldValue, object newValue)
@@ -57,11 +55,7 @@ namespace MauiApp1.CustomComponents
 
         private void GraphicBuild(ICanvas canvas, RectF dirtyRect)
         {
-            double maxvalue = this.ItemsSource.Where(s => !double.IsInfinity(s.Valor)).Max(s => s.Valor);
-
-            float x = 40, y = 10;
-
-            
+            double maxvalue = this.ItemsSource.Where(s => !double.IsInfinity(s.Valor)).Max(s => s.Valor);            
 
             double with = this.Width;
             double height = this.Height;
@@ -86,7 +80,7 @@ namespace MauiApp1.CustomComponents
                 point2.X += distance;
                 point2.Y = part; 
 
-                canvas.StrokeColor = Colors.Red;
+                canvas.StrokeColor = Colors.BlueViolet;
                 canvas.StrokeSize = 1;
                 canvas.DrawLine(point1, point2);
 
