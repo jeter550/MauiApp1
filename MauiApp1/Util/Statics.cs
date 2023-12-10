@@ -34,47 +34,5 @@ namespace MauiApp1.Util
             }
             return prices;
         }
-
-        public void GeneretePrices()
-        {
-
-            Random random = new Random();
-            double t = 0.01;
-            double mu = 0.5;
-            int nsteps = 1000;
-            Dictionary<string, List<double>> simulationData = new Dictionary<string, List<double>>();
-
-            for (int i = 0; i < 5; i++)
-            {
-                List<double> x = new List<double>();
-                List<double> y = new List<double>();
-                for (int j = 0; j < nsteps; j++)
-                {
-                    double step = mu * 0.01 + random.NextDouble() * Math.Sqrt(t);
-                    y.Add(step);
-                    if (j == 0)
-                    {
-                        x.Add(0);
-                    }
-                    else
-                    {
-                        x.Add(t * j);
-                    }
-                }
-                simulationData.Add("y" + i, y);
-                simulationData["x"] = x;
-            }
-
-            List<string> yCols = new List<string>();
-            for (int i = 0; i < 5; i++)
-            {
-                yCols.Add("y" + i);
-            }
-
-
-        }
-
-
-
     }
 }
