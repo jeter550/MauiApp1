@@ -1,4 +1,4 @@
-# Desafio Entrevista .NET MAUI
+# Desafio Simulaçdor de Preços Movimento Browniano .NET MAUI
 <img src="Imagem.png" alt="Exemplo imagem">
 
 # Informações sobre o projeto
