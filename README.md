@@ -1,4 +1,4 @@
-# Desafio Simulador de Preços Browniano .NET MAUI
+# Simulador de Preços - Browniano .NET MAUI
 <img src="Imagem.png" alt="Exemplo imagem">
 
 # Informações sobre o projeto
